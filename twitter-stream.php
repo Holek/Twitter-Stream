@@ -380,7 +380,8 @@ function twitter_stream_parse_tweets($content, $r) {
 			
 	}
 		
-	return array($o,$followers);
+	return apply_filters( 'twitter-stream-parse-tweets-output', array( $o, $followers ), $tweet, $r, $username );
+
 
 }
 
