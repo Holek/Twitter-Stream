@@ -289,7 +289,8 @@ function twitter_stream($args = FALSE) {
 	$output .= '<div class="profile-link"><a href="http://twitter.com/'.$r['username'].'" title="'.$r['profile_link'].'">'.$r['profile_link'].'</a></div>';
 	
 	
-	echo '<div class="twitter-stream">'.$output.'</div>';
+	echo apply_filters( 'twitter-stream-output', '<div class="twitter-stream">'.$output.'</div>', $tweetfollow, $r );
+
 	
 }
 
